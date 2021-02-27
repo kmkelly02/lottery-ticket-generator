@@ -1,0 +1,17 @@
+body {
+    padding: 20px;
+  }
+  button {
+    line-height: 30px;
+    font-weight: bold;
+    padding: 5px 8px 5px 8px;
+    background: #FEC524;
+    border: none;
+    margin: 5px;
+    border-radius: 4px;
+    color: #004785;
+  }
+  button:hover {
+    background: #004785;
+    color: #FEC524;
+  }
