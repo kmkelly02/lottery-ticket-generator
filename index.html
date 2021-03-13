@@ -1,40 +1,157 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/style.css">
+
+
+
 </head>
 
 <body>
 
-    <div id="container">
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="card" style="width: 375px;">
+                    <img src="/assets/imgs/Powerball-Arizona-Lottery.png" alt="Arizona PowerBall Logo">
+                    <div style="text-align: left; width: 300px;">
+                        <p>Start matching numbers and winning cash with Powerball!</p>
+                        <p><strong>Ticket Price:</strong> $2</p>
+                        <p><strong>Drawings:</strong> Wednesday and Saturday</p>
+                        <p><strong>Jackpot:</strong> Starts at $20 million and keeps growing until someone wins.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p><strong>NEXT ESTIMATED JACKPOT</strong></p>
+                        <p style="color: #CDCDCD;">Sat, 3/6</p>
+                        <h2>$123 Million</h2>
+                    </div>
+                    <div id="pballgame"></div>
+                </div>
 
-        <div id="gameselection"></div>
+                <div id="box">
+                    <div class="row">
+                        <button onclick="increment()">+</button>
+                        <input id=demoInput type=number min=0 max=5>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="slideUp('box'); generatepballnum(6, 1, 49);">Purchase</button>
+                        <script>
+                            function increment() {
+                                document.getElementById('demoInput').stepUp();
+                            }
+                            function decrement() {
+                                document.getElementById('demoInput').stepDown();
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div id="pballgamenum"></div>
+            </div>
+
+
+
+            <div class="column">
+                <div class="card" style="width: 375px;">
+                    <img src="/assets/imgs/Mega-Millions-Arizona-Lottery.png" alt="Arizona PowerBall Logo">
+                    <div style="text-align: left; width: 300px;">
+                        <p>Start matching numbers and winning cash with Mega Millions!</p>
+                        <p><strong>Ticket Price:</strong> $2</p>
+                        <p><strong>Drawings:</strong> Tuesday and Friday</p>
+                        <p><strong>Jackpot:</strong> Starts at $20 million and keeps growing until someone wins.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p><strong>NEXT ESTIMATED JACKPOT</strong></p>
+                        <p style="color: #CDCDCD;">Fri, 3/5</p>
+                        <h2>$43 Million</h2>
+                    </div>
+
+                    <div id="mmgame"></div>
+
+                </div>
+
+                <div id="box2">
+                    <div class="row">
+                        <button onclick="increment()">+</button>
+                        <input id=demoInput type=number min=0 max=5>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="slideUp('box2'); generate(6, 1, 49);">Purchase</button>
+                        <script>
+                            function increment() {
+                                document.getElementById('demoInput').stepUp();
+                            }
+                            function decrement() {
+                                document.getElementById('demoInput').stepDown();
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div id="numbersmm">
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card" style="width: 375px;">
+                    <img src="/assets/imgs/Pick-Arizona-Lottery.png" alt="Arizona PowerBall Logo">
+                    <div style="text-align: left; width: 300px;">
+                        <p>Start matching numbers and winning cash with The Pick!</p>
+                        <p><strong>Ticket Price:</strong> $1</p>
+                        <p><strong>Drawings:</strong> Wednesday and Saturday</p>
+                        <p><strong>Jackpot:</strong> Starts at $1 million and may keep growing until someone wins</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p><strong>NEXT ESTIMATED JACKPOT</strong></p>
+                        <p style="color: #CDCDCD;">Sat, 3/6</p>
+                        <h2>$2.3 Million</h2>
+                    </div>
+                    <div id="thepickgame"></div>
+                </div>
+
+                <div id="box3">
+                    <div class="row">
+                        <button onclick="increment()">+</button>
+                        <input id=demoInput type=number min=0 max=5>
+                        <button onclick="decrement()">-</button>
+                    </div>
+                    <div class="row">
+                        <button onclick="slideUp('box3');">Purchase</button>
+                        <script>
+                            function increment() {
+                                document.getElementById('demoInput').stepUp();
+                            }
+                            function decrement() {
+                                document.getElementById('demoInput').stepDown();
+                            }
+                        </script>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
     </div>
 
 
 
     <script src="/assets/app.js"></script>
+
 </body>
 
 </html>
